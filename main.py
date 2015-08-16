@@ -34,7 +34,7 @@ import telegram
 import time
 from rq import Queue
 from redis import Redis
-from handleMessage import handleTgMessage
+from messageHandler import handleTgMessage
 import parsing
 
 
