@@ -23,12 +23,13 @@ payload={
 r=requests.post(url,data=payload)
 pagina = html.fromstring(r.text)
 appelli = pagina.xpath(".//*[@id='tableAppelli']/tbody/tr/td/text()  |.//*[@id='tableAppelli']/tbody/tr/td/child::node()/text()")
-# This will create a list of prices
 f=open("appelli.txt","w")
 k=[]
 for item in appelli:
     if item != "\n":
         k.append(item)
+k = [item.lower() for item in k]
 esami="\n".join(k)
 for i in range(0,len(k)):
     f.write(k[i]+"\n")
+f.close()

@@ -1,5 +1,4 @@
 __author__ = 'Carmine Di Monaco aka CDimonaco'
-import telegram
 
 helpesami="Esami aggiornati alle 00:00,lettura esami: Nome esame - Intervallo prenotazione - Data e ora esame - Tipo esame - Professori - Numero iscritti  \n"
 """ FUNZIONE PER IL CONTROLLO DEI COMANDI E LA RISPOSTA
@@ -14,6 +13,7 @@ def handleTgMessage(tgBot,tgMessage,tgChatID,tgUpdateID,diction,esami):
     print("Messaggio arrivato {0} da chat id : {1}".format(tgMessage,tgChatID))
     comando=tgMessage
     if(comando.startswith("/cercaprof")):
+        comando.lower()
         nome=comando.split(" ")
         nome=nome[1:]
         prof=" ".join(nome)
