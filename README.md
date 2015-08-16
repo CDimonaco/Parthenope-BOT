@@ -12,4 +12,4 @@ Requests http://www.python-requests.org/en/latest/ <br>
 
 #### CREDITS
 https://github.com/leandrotoledo <br>
-https://github.com/MehrdadMzfr <br>
+https://github.com/Mehrdad-V <br>
