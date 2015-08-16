@@ -18,6 +18,9 @@ __author__ = "Di Monaco Carmine aka CDimonaco"
     Ogni volta che un lavoro sarà terminato si passerà al successivo.
     Questo metodo permette di avere un tempo di risposta e di esecuzione dei lavori molto breve,e di gestire
     anche grandi richieste al bot in poco tempo.
+    Dato che ci sono diversi "jobs" in coda sono accessibili a multipli "workers",in poche parole senza questo metodo
+    bloccheremo l'esecuzione del codice finchè non i messaggi non hanno ricevuto risposta,aumentando il delay nelle risposte.
+    Usando rq,ciò non si verifica.
     Nulla vieta di usare altri metodi,anche semplicemente di leggere ogni update dall'api senza usare code e di
     processare i comandi.
     Ciò però in presenza di grandi carichi di richieste riduce drasticamente le performance.
