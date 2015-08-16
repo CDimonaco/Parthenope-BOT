@@ -23,7 +23,6 @@ payload={
 r=requests.post(url,data=payload)
 pagina = html.fromstring(r.text)
 appelli = pagina.xpath(".//*[@id='tableAppelli']/tbody/tr/td/text()  |.//*[@id='tableAppelli']/tbody/tr/td/child::node()/text()")
-# This will create a list of prices
 f=open("appelli.txt","w")
 k=[]
 for item in appelli:
