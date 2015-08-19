@@ -3,9 +3,9 @@ infoseg="Sede: Centro Direzionale - Isola C4\nOrari di attenzione telefonica:\nG
 helpesami="Esami aggiornati alle 00:00,lettura esami: Nome esame - Intervallo prenotazione - Data e ora esame - Tipo esame - Professori - Numero iscritti  \n"
 """ FUNZIONE PER IL CONTROLLO DEI COMANDI E LA RISPOSTA
     Tra i parametri passati ritroviamo anche tgUpdateID,da me non usato ma utile per identificare meglio
-    i messaggi arrivati e le i loro valori (Nickname etc..)
+    i messaggi arrivati e le i loro attributi(Nickname etc..)
     Con dei costrutti if controllo i messaggi arrivati.
-    Se corrispondo ai comandi concessi rispondo adeguatamente.
+    Se corrispondono ai comandi concessi rispondo adeguatamente.
     Le operazioni sulla variabile nome servono ad identicare il prof da cercare dividendo nome e cognome inseriti nel comando
     Sintassi comando (/cercaprof SPAZIO cognome SPAZIO nome)
     """
@@ -28,5 +28,6 @@ def handleTgMessage(tgBot,tgMessage,tgChatID,tgUpdateID,diction,esami):
         tgBot.sendMessage(chat_id=tgChatID, text="Inf-Bot , Creato da Di Monaco Carmine, credits completi e source su ...")
     elif (comando==("/segreteria")):
         tgBot.sendMessage(chat_id=tgChatID,text=infoseg)
+        tgBot.sendLocation(chat_id=tgChatID,longitude=40.856845,latitude=14.284453)
     else:
         tgBot.sendMessage(chat_id=tgChatID, text="Comando non riconosciuto. Riprova")
