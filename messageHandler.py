@@ -1,5 +1,5 @@
 __author__ = 'Carmine Di Monaco aka CDimonaco'
-
+infoseg="Sede: Centro Direzionale - Isola C4\nOrari di attenzione telefonica:\nGiorni Pari:13:00 - 14:00\nGiorni Dispari:8:00 - 9:00 / 13:00 - 14:30\nOrario di sportello:\nLunedì, Mercoledì e Venerdì : 09.00 – 12.00\nMartedì e Giovedì : 09.00 - 12.30 e 14.00 – 15.30\nNumeri di telefono:+39-081-547-6652 -  	+39-081-547-6655\nEmail:segreteria.direzionale@uniparthenope.it\n"
 helpesami="Esami aggiornati alle 00:00,lettura esami: Nome esame - Intervallo prenotazione - Data e ora esame - Tipo esame - Professori - Numero iscritti  \n"
 """ FUNZIONE PER IL CONTROLLO DEI COMANDI E LA RISPOSTA
     Tra i parametri passati ritroviamo anche tgUpdateID,da me non usato ma utile per identificare meglio
@@ -26,5 +26,7 @@ def handleTgMessage(tgBot,tgMessage,tgChatID,tgUpdateID,diction,esami):
         tgBot.sendMessage(chat_id=tgChatID, text=helpesami+esami)
     elif(comando==("/credits")):
         tgBot.sendMessage(chat_id=tgChatID, text="Inf-Bot , Creato da Di Monaco Carmine, credits completi e source su ...")
+    elif (comando==("/segreteria")):
+        tgBot.sendMessage(chat_id=tgChatID,text=infoseg)
     else:
         tgBot.sendMessage(chat_id=tgChatID, text="Comando non riconosciuto. Riprova")
